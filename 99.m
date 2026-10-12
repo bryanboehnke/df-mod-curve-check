@@ -166,12 +166,12 @@ print "Nr. of divisors D such that D+D0 in W_7^1:", #todo;
 // For the deg 7 divisors D such that D and D+D0 move, check all translates D+i*D_0
 todo2 := [];
 for D in todo do
-    dims := [Dimension(RiemannRochSpace(D+i*D0)) : i in [1..5]];
+    dims := [Dimension(RiemannRochSpace(D+i*D0)) : i in [1..#Points(EF)]];
     if Minimum(dims) gt 1 then
         Append(~todo2, D);
     end if;
 end for;
 
-print "Nr. of divisors D such that D+i*D0 in W_7^1 for i=1,...,5:", #todo2;
+print "Nr. of divisors D such that D+i*D0 in W_7^1 for all i:", #todo2;
 
 assert #todo2 eq 0;
